@@ -3,15 +3,27 @@
     <head>
     <link rel="stylesheet" href="{% static 'myapp/styles.css' %}">
     </head>
-    <body class="bg-sky-500">
-        <h1>Главная страница</h1>
-        <h2>
-            {% for item in items%}
-            <a href="{% url 'myapp:detail' item.id %}">
-            ID: {{item.id}} | Имя: {{item.name}} | Цена: {{item.price}} | Описание: {{item.description}}<br/>
-            <a>
-            {% endfor %}
-        </h2>
+    <body>
+      <nav>
+        <div>
+          <div>
+            <div>
+              <div class="flex">
+                  <img class="h-8 w-8" src="{% static 'myapp/images/logo-shop.png' %}" alt="logo" />
+                  <span class="text-xl">Pro Shop</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <h2>
+          {% for item in items%}
+          <a href="{% url 'myapp:detail' item.id %}">
+          ID: {{item.id}} | Имя: {{item.name}} | Цена: {{item.price}} | Описание: {{item.description}}<br/>
+          <a>
+          {% endfor %}
+      </h2>
     </body>
 
 </html>
